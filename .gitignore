@@ -11,3 +11,10 @@ rom/*.hex
 __pycache__/
 node_modules/
 ghidra-projects/
+build/
+*.bin
+*.map
+*.lbl
+*.dbg
+*.lst
+.DS_Store
