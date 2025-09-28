@@ -8494,7 +8494,7 @@ Loop_if_busy:
         rts
 
 Line_2_Fixed_data:
-        .byte   "line 2"
+        .byte "line 2"
         .byte   $00
 Line_4_Fixed_data:
         .byte   "line 4"
