@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.s": "asm-65xx",
+    "*.inc": "asm-65xx",
+    "*.cfg": "ini"
+  },
+  "editor.tabSize": 8,
+  "editor.insertSpaces": false,
+  "editor.rulers": [
+    8,
+    16,
+    24,
+    32
+  ]
+}

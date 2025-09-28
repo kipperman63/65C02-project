@@ -1,0 +1,5 @@
+LABEL { NAME "_IRQ_"; ADDR $FFFE; };
+LABEL { NAME "_NMI_"; ADDR $FFFA; };
+LABEL { NAME "_Loop_"; ADDR $A32F; };
+LABEL { NAME "_loop_"; ADDR $A106; };
+LABEL { NAME "_loop_"; ADDR $A0F8; };

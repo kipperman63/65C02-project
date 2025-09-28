@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "assemble (ca65)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "mkdir -p build && ca65 --cpu 65C02 -g -l build/recovered.lst -o build/recovered.o src/recovered.s"
+      ],
+      "group": { "kind": "build", "isDefault": false },
+      "problemMatcher": "$ca65"
+    },
+    {
+      "label": "link (ld65)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "mkdir -p build && ld65 -C cfg/rom_32k_at_8000.cfg -o build/rom.bin build/recovered.o -m build/rom.map -Ln build/labels.lbl --dbgfile build/rom.dbg"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "dependsOn": [
+        "assemble (ca65)",
+        "link (ld65)"
+      ],
+      "dependsOrder": "sequence",
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Build ROM (cl65)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "mkdir -p build && cl65 -t none -C cfg/rom_32k_at_8000.cfg -o build/rom.bin src/recovered.s"
+      ],
+      "group": { "kind": "build", "isDefault": false },
+      "problemMatcher": "$ca65"
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "bash",
+      "args": [ "-lc", "rm -f build/* *.map *.lbl *.lst *.dbg" ],
+      "problemMatcher": []
+    }
+  ]
+}
