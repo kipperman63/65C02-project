@@ -1,16 +1,3 @@
-.DS_Store
-.vscode/*.log
-.history/
-build/
-*.o
-*.map
-*.lbl
-*.dbg
-rom/*.bin
-rom/*.hex
-__pycache__/
-node_modules/
-ghidra-projects/
 build/
 *.bin
 *.map
